@@ -1,0 +1,19 @@
+#   Ushbu qator, Docker Compose faylning versiyasini belgilaydi. '3', faylning versiyasini ko'rsatadi.
+version: '3'
+
+# Bu qator, Docker Compose yordamida boshqariladigan xizmatlarni aniqlaydi.
+services:
+  # Bu qator, web nomli xizmatni aniqlaydi. Bu xizmat, web ilovasini ishga tushirish va boshqarish uchun ishlatiladi.
+  web:
+    # Ushbu qator, Docker imajini o'zlashtirish uchun kerakli faylning joyini belgilaydi. Bu holatda, hozirgi katalog ishlatiladi.
+    build: .
+    # Bu qator, Docker konteyneri ishga tushirilganda bajariladigan buyruqni belgilaydi. Bu, Django ilovasini 0.0.0.0:8000 manzilida ishga tushiradi.
+    command: python manage.py runserver 0.0.0.0:8000
+    # Bu qator, Docker konteyner va local fayl tizimi o'rtasidagi bog'lanishni belgilaydi.
+    volumes:
+      # Ushbu qator, hozirgi katalogdagi fayllarni /app papkasi bilan bog'lash uchun ishlatiladi.
+      - .:/app
+    # Bu qator, Docker konteynerda portlarni aniqlaydi.
+    ports:
+      # Bu qator, Docker konteynerdagi 8000-portini hostning 8000-portiga bog'lash uchun ishlatiladi.
+      - "8000:8000"
