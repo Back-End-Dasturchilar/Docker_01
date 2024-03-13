@@ -1,6 +1,6 @@
-# Docker_01
+# Docker
 
-Docker
+Dockerdan foydalanish uchun bizga Dockerfile va docker-compose.yml fayl kerak bo'ladi
 
 # Docker yordamida DRF projectni deploy qilish
 
